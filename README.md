@@ -10,7 +10,7 @@
 ## 📌 스터디 참여자
 |[![](https://github.com/lhb8106.png?size=100)](https://github.com/lhb8106) |[![](https://github.com/eunjjungg.png?size=100)](https://github.com/eunjjungg) |
 |:---:|:---:|
-| **Hyebin Lee** | **EunJung Jung** | 
+| **HyeBin Lee** | **EunJung Jung** | 
 
 
 <br/>
