@@ -8,9 +8,9 @@
 <br/>
 
 ## 📌 스터디 참여자
-|[![](https://github.com/lhb8106.png?size=100)](https://github.com/lhb8106) |[![](https://github.com/eunjjungg.png?size=100)](https://github.com/eunjjungg) |
-|:---:|:---:|
-| **HyeBin Lee** | **EunJung Jung** | 
+|[![](https://github.com/lhb8106.png?size=100)](https://github.com/lhb8106) |[![](https://github.com/eunjjungg.png?size=100)](https://github.com/eunjjungg) |[![](https://github.com/jiwon2724.png?size=100)](https://github.com/eunjjungg) |
+|:---:|:---:|:---:|
+| **HyeBin Lee** | **EunJung Jung** | **JiWon Jung** |
 
 
 <br/>
