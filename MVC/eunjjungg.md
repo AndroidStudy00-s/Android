@@ -1,6 +1,9 @@
 ## MVC
 ![image](https://user-images.githubusercontent.com/100047095/235994680-13dcaed3-e2b9-44d7-8467-bf79ea372773.png)
 
+<br/>
+
+### 1. 설명
 - 지금 나와있는 MVP, MVVM 패턴은 MVC를 초석으로 모듈화되고 테스터블하게 나온 패턴.
 - MVC는 M(Model), V(View), C(Controller)로 이루어져 있음.
     - Model : 일반적으로 앱의 데이터 + 상태 + 비즈니스 로직을 묶은 것. 컨트롤러에 묶이지 않으므로 많은 곳에서 재사용할 수 있음.
@@ -15,7 +18,7 @@
 
 <br/>
 
-### MVC 내가 만든 코드에서 살펴본다면?
+### 2. MVC 내가 만든 코드에서 살펴본다면?
 
 링크 : [https://github.com/AndroidStudy00-s/AS-eunjjungg/tree/W1-MVC](https://github.com/AndroidStudy00-s/AS-eunjjungg/tree/W1-MVC)
 
@@ -25,13 +28,13 @@ View, Controller : 값이 바뀔 때마다 UI 갱신
 
 <br/>
 
-### MVC 장점
+### 3. MVC 장점
 
 - 코드 파악이 쉬워짐
 
 <br/>
 
-### MVC 단점
+### 4. MVC 단점
 
 - 테스트 용이성이 떨어짐. 컨트롤러가 안드로이드 API와 깊게 종속됨. 따라서 유닛테스트가 어려움.
 - 모듈화 및 유연성의 한계. 컨트롤러가 뷰와 강력하게 결합되어 뷰를 변경하면 컨트롤러로 돌아가서 변경도 해주어야 함.
@@ -39,13 +42,13 @@ View, Controller : 값이 바뀔 때마다 UI 갱신
 
 <br/>
 
-### 👩‍💻 MVC Pattern이 뭔가요?
+### 5. 👩‍💻 MVC Pattern이 뭔가요?
 
 모델, 뷰, 컨트롤러로 이루어져 있으며 일반적으로 안드로이드에서는 액티비티와 프래그먼트가 View, Controller의 역할을 수행합니다. 모델에서는 데이터, 비지니스 로직, 상태가 묶여있으며 컨트롤러는 모델 값이 바뀌면 뷰의 상태를 업데이트할 수 있습니다. 
 
 <br/>
 
-### Reference
+### 6. Reference
 
 - [https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)
 - [https://thdev.tech/androiddev/2016/10/23/Android-MVC-Architecture/](https://thdev.tech/androiddev/2016/10/23/Android-MVC-Architecture/)
