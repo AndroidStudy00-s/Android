@@ -109,3 +109,11 @@ MVP 디자인 패턴은 MVC 디자인 패턴의 단점을 보완하기 위해 �
 
 
 
+# 출처
+https://thdev.tech/androiddev/2016/10/12/Android-MVP-Intro/
+https://jminie.tistory.com/168
+
+
+
+
+
