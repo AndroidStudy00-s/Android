@@ -38,9 +38,6 @@ MVP 패턴은 MVC 패턴의 의존적인 부분(`View와 Model간`)을 해결하
 // 프로필 조회 상황 가정.
 // Activity (View)
 class MainActivity : AppCompatActivity(), ProfileView {
-
-    private lateinit var mainPresenter: Presenter
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
