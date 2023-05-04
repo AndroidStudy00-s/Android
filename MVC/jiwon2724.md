@@ -77,5 +77,10 @@ MVC 디자인 패턴은 `Model`, `View`, `Controller` 세 가지 요소로 나�
 이벤트에 따라 필요시 `Model`에 업데이트 요청을 하여 `View`에 나타냅니다. 안드로이드에선 `Model`은 `View`에 종속적이며 요소들의 분리가 되어있지 않아
 유지보수가 어렵고, 복잡도가 증가하는 단점이 있습니다.
 
+# 출처
+https://medium.com/@jang.wangsu/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4-mvc-%ED%8C%A8%ED%84%B4%EC%9D%B4%EB%9E%80-1d74fac6e256
+
+https://thdev.tech/androiddev/2016/10/23/Android-MVC-Architecture/
+
 
 
