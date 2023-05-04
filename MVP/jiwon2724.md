@@ -103,14 +103,17 @@ MVP 패턴을 살펴봤다. 확실히 MVC 패턴에서의 문제점(View와 Mode
 
 
 
+
 # 1분 답변
 MVP 디자인 패턴은 MVC 디자인 패턴의 단점을 보완하기 위해 탄생한 디자인 패턴입니다.. `Model`, `View`, `Presenter` 세 가지 요소로 나눠 분리되어 동작하는 방식입니다. 유저의 이벤트를 `View`에서 받고
 이를 `Presenter`에 알려 `Presenter`는 `Model`에 업데이트 요청을 하여 값을 받고, 다시 `View`에 UI를 갱신합니다.
 
 
 
+
 # 출처
 https://thdev.tech/androiddev/2016/10/12/Android-MVP-Intro/
+
 https://jminie.tistory.com/168
 
 
