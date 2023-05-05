@@ -50,3 +50,4 @@ Model, View, ViewModel의 줄임말로 Model은 데이터, 상태를 나타내�
 - [https://blog.gangnamunni.com/post/mvvm_anti_pattern/](https://blog.gangnamunni.com/post/mvvm_anti_pattern/)
 - [https://medium.com/@dheerubhadoria/android-mvvm-how-to-use-mvvm-in-android-example-7dec84a1fb73](https://medium.com/@dheerubhadoria/android-mvvm-how-to-use-mvvm-in-android-example-7dec84a1fb73)
 - [https://brunch.co.kr/@mystoryg/175](https://brunch.co.kr/@mystoryg/175)
+- [https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)
