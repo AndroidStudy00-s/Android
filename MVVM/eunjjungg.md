@@ -37,6 +37,14 @@
 
 <br/>
 
+### MVVM ViewModel vs AAC ViewModel
+
+MVVM의 ViweModel은 View, Model 사이에서 데이터를 관리해주고 바인딩해주는 역할임. AAC ViewModel은 Android Lifecycle을 알고 있고 Activity/Fragment가 `onDestroy()` 될 때 데이터를 해제해주는 역할을 함. 따라서 AAC ViewModel은 MVVM ViewModel의 역할을 하기 위해 나온 건 아님. 
+
+하지만 AAC ViewModel을 사용해서 MVVM의 ViewModel 역할을 하도록 할 수 있음. ObservableField, LiveData 등을 사용해서 **데이터 바인딩**을 해준다면 ViewModel로 사용이 가능함.
+
+<br/>
+
 ### 👩‍💻 MVVM Pattern이 뭔가요?
 
 Model, View, ViewModel의 줄임말로 Model은 데이터, 상태를 나타내고 View는 ViewModel을 관찰하고 있으며 데이터 갱신을 하고 ViewModel은 View와 관련된 모든 비즈니스 로직을 담당하고 있는 구조입니다. MVP 패턴과 마찬가지로 M-V 사이의 의존성은 없고 MVP 패턴과는 다르게 V-VM 사이의 의존성도 없어 테스트에 용이하다는 장점이 있습니다. 
@@ -51,3 +59,4 @@ Model, View, ViewModel의 줄임말로 Model은 데이터, 상태를 나타내�
 - [https://medium.com/@dheerubhadoria/android-mvvm-how-to-use-mvvm-in-android-example-7dec84a1fb73](https://medium.com/@dheerubhadoria/android-mvvm-how-to-use-mvvm-in-android-example-7dec84a1fb73)
 - [https://brunch.co.kr/@mystoryg/175](https://brunch.co.kr/@mystoryg/175)
 - [https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)
+- [https://medium.com/kenneth-android/android-mvvm-viewmodel과-aac-viewmodel의-차이-8c0d54922e07](https://medium.com/kenneth-android/android-mvvm-viewmodel%EA%B3%BC-aac-viewmodel%EC%9D%98-%EC%B0%A8%EC%9D%B4-8c0d54922e07)
