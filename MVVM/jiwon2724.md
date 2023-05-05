@@ -84,7 +84,6 @@ MVVM 패턴을 살펴봤다. 확실히 MVP 패턴에서의 단점 Presenter와 V
 -> ViewModel 재사용 가능. (ViewModel은 View를 참조하지 않음.)
 
 ## 장, 단점
-MVP 패턴에선 중간에 Presenter라는 연결 부분이 생겨 MVC의 단점을 보완했다.
 
 **장점**
 - View가 Model사이 의존성이 없다.
