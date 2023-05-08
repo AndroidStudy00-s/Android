@@ -78,11 +78,6 @@ class NicknameViewModel() {
 }
 ```
 
-
-MVVM 패턴을 살펴봤다. 확실히 MVP 패턴에서의 단점 Presenter와 View의 의존성과, 1:1관계가 해결됨.
-
--> ViewModel 재사용 가능. (ViewModel은 View를 참조하지 않음.)
-
 ## 장, 단점
 
 **장점**
