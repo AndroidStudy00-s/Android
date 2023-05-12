@@ -254,6 +254,81 @@ ex) `viewModelScope` , `lifecycleScope`
 - `CoroutineExceptionHandler` : 포착되지 않은 예외를 처리한다.
 
 
+# Android의 코루틴 권장사항
+### 디스패처 삽입
+새 코루틴을 만들거나 `withContext`를 호출할 때 `Dispatchers`를 하드코딩하지말자.
+```kotlin
+// DO inject Dispatchers
+class NewsRepository(
+    private val defaultDispatcher: CoroutineDispatcher = Dispatchers.Default
+) {
+    suspend fun loadNews() = withContext(defaultDispatcher) { /* ... */ }
+}
+
+// DO NOT hardcode Dispatchers
+class NewsRepository {
+    // DO NOT use Dispatchers.Default directly, inject it instead
+    suspend fun loadNews() = withContext(Dispatchers.Default) { /* ... */ }
+}
+```
+이렇게 사용하는경우 테스트에 용이하게 사용할 수 있다. 
+
+### 일시중단 함수는 기본 스레드(UI)에서 호출할 때 안전해야한다
+클래스가 코루틴에서 장기적인 실행에 대하여 차단 작업을 실행하는 경우 `withContext`를 사용하여 기본(UI) 스레드에서 실행을 이동하는 역할을 한다.
+
+### ViewModel은 코루틴을 만들어야 한다
+```kotlin
+class LatestNewsViewModel(
+    private val getLatestNewsWithAuthors: GetLatestNewsWithAuthorsUseCase
+) : ViewModel() {
+    // DO NOT do this. News would probably need to be refreshed as well.
+    // Instead of exposing a single value with a suspend function, news should
+    // be exposed using a stream of data as in the code snippet above.
+    suspend fun loadNews() = getLatestNewsWithAuthors()
+}
+```
+ViewModel을 사용하면 비즈니스 로직을 실행하기 위해 일시 중단 함수를 노출하는 대신 코루틴을 만들게 된다. View에서 직접 코루틴을 트리거하여 비즈니스 로직을 실행하면 안된다.
+해당 작업은 ViewModel에게 맡기자.
+
+### 변경 가능한 타입 노출하지 않기
+```kotlin
+// DO expose immutable types
+class LatestNewsViewModel : ViewModel() {
+
+    private val _uiState = MutableStateFlow(LatestNewsUiState.Loading)
+    val uiState: StateFlow<LatestNewsUiState> = _uiState
+
+    /* ... */
+}
+
+class LatestNewsViewModel : ViewModel() {
+
+    // DO NOT expose mutable types
+    val uiState = MutableStateFlow(LatestNewsUiState.Loading)
+
+    /* ... */
+}
+```
+변경할 수 없는 유형을 다른 클래스에 노출하는 것을 지양하자. 이러한 방식으로 변경 가능한 유형에 대한 모든 변경 사항은 하나의 클래스에 집중되어 문제가 발생했을 때 디버깅하기가 더 쉽다.
+
+### 데이터, 비즈니스 레이어는 일시중단함수와 Flow를 노출하자
+구글 권장 아키텍처와 클린 아키텍처 기반 관점에서 차이점 확인해보기.
+
+### 비즈니스 및 데이터 레이어에서 코루틴 만들기 
+구글 권장 아키텍처와 클린 아키텍처 기반 관점에서 차이점 확인해보기.
+
+### 테스트에 TestDispatcher 삽입하기
+
+### GlobalScope 피하기 
+- 제어가 되지 않는 범위에서 코드가 실행되므로 어려워지고, 실행을 제어할 수 없음.
+- GlobalScope는 싱글톤으로 만들어져있다. 잘못 사용한다면 프로그램 전체에 영향을 미칠 수 있음.
+
+### 코루틴을 취소 가능하게 만들기
+
+### 예외에 주의
+코루틴에서 발생하는 예외를 처리하지 않으면 앱이 비정상 종료될 수 있다. 예외가 발생할 가능성이 있다면 `viewModelScope` 또는 `lifecycleScope`를 사용하여
+만든 코루틴의 본문에서 예외를 포착하자.
+
 
 # 출처
 
