@@ -331,10 +331,8 @@ class LatestNewsViewModel : ViewModel() {
 
 
 # 출처
-
-https://developer.android.com/kotlin/coroutines?hl=eng
-
-https://developer.android.com/kotlin/coroutines-adv?hl=eng
+- https://developer.android.com/kotlin/coroutines?hl=eng
+- https://developer.android.com/kotlin/coroutines-adv?hl=eng
 
 # 정리 포스팅
 - [Android의 Kotlin 코루틴](https://dev-jiwon.notion.site/Android-Kotlin-3faa1c1298ec477b95d9f56a63b72b20)
