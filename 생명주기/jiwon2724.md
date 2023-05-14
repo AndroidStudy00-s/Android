@@ -98,7 +98,7 @@ Activity가 중단됨 상태에 들어가면 Activity 객체는 메모리 안에
 # Fragment Lifecycle(생명주기)
 ![image](https://github.com/AndroidStudy00-s/Android/assets/70135188/53b48cb7-1c56-4553-8237-4580b2aef48f)
 
-옆 그림은 액티비티가 실행중일 때 프래그 먼트의 생명주기이다. 액티비티와 다소 유사하지만, 다른점만 몇가지 살펴보겠다. onCreate() ~ onDestory()는 Activity와 동일하다.
+위 그림은 액티비티가 실행중일 때 프래그 먼트의 생명주기이다. 액티비티와 다소 유사하지만, 다른점만 몇가지 살펴보겠다. onCreate() ~ onDestory()는 Activity와 동일하다.
 
 ### onAttatch()
 
