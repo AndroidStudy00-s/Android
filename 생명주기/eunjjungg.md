@@ -1,7 +1,6 @@
 ## Activity Lifecycle
 
-![image](https://github.com/AndroidStudy00-s/Android/assets/100047095/724be541-4267-4849-88f3-35e5ab1ee10c)
-
+<img width="762" alt="image" src="https://github.com/AndroidStudy00-s/Android/assets/100047095/9c1de143-9cdb-4264-a083-94a1aec81507">
 
 **activity class에서 제공하는 6가지 콜백**
 
