@@ -35,6 +35,7 @@ class GroupDataSourceImpl @Inject constructor(
 
 <br/>
 
+
 ### Repository
 
 ```kotlin
@@ -100,7 +101,7 @@ fun ApiResult<GroupSearchApiResponse>.toDomain(): ApiResult<GroupSearchItem> {
     }
 ```
 
-- 처음에는 서버에서 내려주는 다음 페이지의 값이 존재하는가에 대한 여부인 hasNext의 값이 없어도 될줄 알았다. 그래서 hasNext에 관계없이 일단 데이터를 요청하고, 없다면 페이징 내부에서 처리하도록 했는데,,, 뷰가 복잡해지면서 사이드 이펙트가 생겼다. 그래서 도메인 쪽에서 사용하는 데이터 모델에도 hasNext를 넣어주었고, 이 값에 따라 PagingSource가 이어서 페이징을 할지 말지를 정해주었다. (nextKey 값을 통해)
+- 처음에는 서버에서 내려주는 다음 페이지의 값이 존재하는가에 대한 여부인 `hasNext`의 값이 없어도 될줄 알았다. 그래서 `hasNext`에 관계없이 일단 데이터를 요청하고, 없다면 페이징 내부에서 처리하도록 했는데,,, 뷰가 복잡해지면서 사이드 이펙트가 생겼다. 그래서 도메인 쪽에서 사용하는 데이터 모델에도 `hasNext`를 넣어주었고, 이 값에 따라 `PagingSource`가 이어서 페이징을 할지 말지를 정해주었다. (`nextKey` 값을 통해)
 
 <br/>
 
@@ -130,6 +131,8 @@ class SearchGroupByKeywordUseCase @Inject constructor(
     }
 }
 ```
+
+- `initialLoadSize`를 따로 정해주지 않는다면 `pageSize`의 배수로 뽑히게 됨. 2배인가.. 3배였던가..
 
 <br/>
 
@@ -170,7 +173,7 @@ class GroupListPagingSource @Inject constructor(
 }
 ```
 
-- pagingSource의 load에서 맨 처음 페이징할 페이지의 페이지값(인덱스값)을 정해줄 수 있음. 나는 GROUP_LIST_STARTING_PAGE_INDEX로 두었는데, 이 값으로 백엔드에 전달하는 paging value의 초기값이 지정되니 잘 생각해서 넣어주어야 함… 백엔드의 페이지네이션이 0부터 시작이라면 0을, 아니라면 1을 넣어주어야 함.
+- `pagingSource`의 `load`에서 맨 처음 페이징할 페이지의 페이지값(인덱스값)을 정해줄 수 있음. 나는 `GROUP_LIST_STARTING_PAGE_INDEX`로 두었는데, 이 값으로 백엔드에 전달하는 paging value의 초기값이 지정되니 잘 생각해서 넣어주어야 함… 백엔드의 페이지네이션이 0부터 시작이라면 0을, 아니라면 1을 넣어주어야 함.
 
 <br/>
 
@@ -198,7 +201,7 @@ fun searchGroup(keyword: String): Flow<PagingData<GroupSearchUiModel>> {
 }
 ```
 
-- 데이터가 없을 때의 상황인 DataNotFound를 페이징 되는 uimodel 중의 하나로 넣고 싶었음. 왜냐면 그쪽 부분 ui들을 모두 pagingLib으로 사용하고 싶었기 때문임. 따라서 separator처럼 작동하게 하였고 이전 값과 이후 값이 없는 경우인 데이터가 아예 존재하지 않는 경우에 DataNotFound를 넣어주었다.
+- 데이터가 없을 때의 상황인 `DataNotFound`를 페이징 되는 `uimodel` 중의 하나로 넣고 싶었음. 왜냐면 그쪽 부분 ui들을 모두 pagingLib으로 사용하고 싶었기 때문임. 따라서 separator처럼 작동하게 하였고 이전 값과 이후 값이 없는 경우인 데이터가 아예 존재하지 않는 경우에 `DataNotFound`를 넣어주었다.
 
 <br/>
 
